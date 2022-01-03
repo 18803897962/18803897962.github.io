@@ -1,0 +1,165 @@
+/*标题的演示设计*/
+h1{
+    color: rgb(82, 184, 197);
+    font-size: 30px;
+}
+h2{
+    color: rgb(50, 134, 123);
+}
+h3{
+    color: rgb(196, 196, 169);
+    font-size: 30px;
+}
+h4{
+    color: rgb(121, 79, 170);
+    font-size: 30px;
+}
+h5{
+    color: rgb(189, 230, 113);
+    font-size: 30px;
+}
+/*body部分的样式设定*/
+body{
+    background: url('./image/背景.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
+
+}
+.box1{
+    color: rgb(145, 209, 209);
+    border: 5px dotted #9edd85;
+    padding: 20px;
+    margin: 20px 0px;
+    border-radius: 35px;
+}
+.box2{
+    color: rgb(196, 196, 169);
+    border: 5px dotted #c564ce;
+    padding: 20px;
+    margin: 20px 0px;
+    border-radius: 35px;
+}
+/*文字部分样式设定*/
+p{
+    text-indent: 2em;
+    font-size: 16px;
+}
+/*接下来是网页超链接的样式设定*/
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+a{
+    top: 50%;
+    left: 4%;
+    font-size: 20px;
+    position: relative;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    border-radius: 30px;
+    background-size: 400%;
+    text-transform: uppercase;
+}
+a:hover{
+    animation: animate 8s linear;
+
+}
+@keyframes animate{
+    0%{
+        background-position: 100%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+
+a::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    border-radius: 40px;
+    background-size: 400%;
+    opacity: -1;
+    transition: 0.5s;
+}
+
+a:hover::before{
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
+/*接下来是对Music插件的样式设定*/
+.loader{
+    width: 10em;
+    height: 10em;
+
+    font-size: 7px;
+    border-radius: 50%;
+    border-top: 0.3em solid hotpink;
+    position: absolute;
+    box-sizing: border-box;
+    animation: rotating 2s ease-in-out infinite;
+    --direction: 1;
+}
+.loader::before,
+.loader::after{
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    box-sizing: border-box;
+    top: -0.2em;
+
+}
+
+.loader::before{
+    border-top: 0.3em solid dodgerblue;
+
+    transform: rotate(120deg);
+
+}
+.loader::after{
+    border-top: 0.3em solid gold;
+
+    transform: rotate(240deg);  
+
+}
+.loader span{
+    color: white;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    text-align: center;
+    line-height: 10em;
+    font-family: sans-serif;
+    animation: rotating 2s linear infinite;
+    --direction: -1;
+
+
+}
+@keyframes rotating {
+    50%{
+        transform: rotate(calc(180deg * var(--direction)));
+    }
+    100%{
+        transform: rotate(calc(360deg * var(--direction)));
+    }
+}
+
+
+
+
+
